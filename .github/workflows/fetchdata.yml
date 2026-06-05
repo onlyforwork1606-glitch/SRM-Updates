@@ -1,0 +1,40 @@
+name: Fetch Student Data
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'   # ← Change interval here: '*/15' = every 15 min, '*/30' = every 30 min
+  workflow_dispatch:           # allow manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch APIs and update HTML
+        env:
+          API_URL_1: ${{ secrets.API_URL_1 }}   # e.g. https://api.skillagent.nxtagent.ai/base/api/v2/iri/status?college_id=GITAM-HYD-2
+          API_URL_2: ${{ secrets.API_URL_2 }}   # e.g. https://api.skillagent.nxtagent.ai/base/api/v2/iri/status?college_id=SRM-AP
+        run: python fetch_data.py
+
+      - name: Commit and push updated files
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/history.json index.html
+          git diff --cached --quiet || git commit -m "chore: update student data [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+          git push
