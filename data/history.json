@@ -1,0 +1,25 @@
+[
+  {
+    "fetched_at": "2026-06-06T02:23:59Z",
+    "api1": {
+      "label": "College 1",
+      "data": {
+        "total": 1568,
+        "registered": 95,
+        "not_registered": 1473
+      },
+      "error": null
+    },
+    "api2": {
+      "label": "College 2",
+      "data": {
+        "count": {
+          "completed": 50,
+          "inprogress": 3,
+          "not_started": 42
+        }
+      },
+      "error": null
+    }
+  }
+]
