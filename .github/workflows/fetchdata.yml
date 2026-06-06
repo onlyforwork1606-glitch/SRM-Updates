@@ -2,15 +2,25 @@ name: Fetch Student Data
 
 on:
   schedule:
-    - cron: '*/15 * * * *'   # ← Change interval here: '*/15' = every 15 min, '*/30' = every 30 min
-  workflow_dispatch:           # allow manual trigger from GitHub UI
+    - cron: '*/15 * * * *'   # ← Change interval: '*/15' = 15 min, '*/30' = 30 min
+  workflow_dispatch:           # manual trigger from GitHub UI
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  fetch-and-update:
+  fetch-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -27,14 +37,29 @@ jobs:
 
       - name: Fetch APIs and update HTML
         env:
-          API_URL_1: ${{ secrets.API_URL_1 }}   # e.g. https://api.skillagent.nxtagent.ai/base/api/v2/iri/status?college_id=GITAM-HYD-2
-          API_URL_2: ${{ secrets.API_URL_2 }}   # e.g. https://api.skillagent.nxtagent.ai/base/api/v2/iri/status?college_id=SRM-AP
+          API_URL_1: ${{ secrets.API_URL_1 }}
+          API_URL_2: ${{ secrets.API_URL_2 }}
+          API_LABEL_1: ${{ secrets.API_LABEL_1 }}   # optional display name
+          API_LABEL_2: ${{ secrets.API_LABEL_2 }}   # optional display name
         run: python fetch_data.py
 
-      - name: Commit and push updated files
+      - name: Commit updated data to repo
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/history.json index.html
           git diff --cached --quiet || git commit -m "chore: update student data [$(date -u '+%Y-%m-%d %H:%M UTC')]"
           git push
+
+      # ── Deploy index.html to GitHub Pages ──────────────────────────────────
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'          # uploads entire repo root (index.html lives here)
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
