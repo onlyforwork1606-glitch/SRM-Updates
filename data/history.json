@@ -21,5 +21,26 @@
       },
       "error": null
     }
+  },
+  {
+    "fetched_at": "2026-06-06T02:44:09Z",
+    "registration": {
+      "data": {
+        "total": 1568,
+        "registered": 96,
+        "not_registered": 1472
+      },
+      "error": null
+    },
+    "test_status": {
+      "data": {
+        "count": {
+          "completed": 51,
+          "inprogress": 3,
+          "not_started": 42
+        }
+      },
+      "error": null
+    }
   }
 ]
