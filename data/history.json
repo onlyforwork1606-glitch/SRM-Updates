@@ -1,28 +1,5 @@
 [
   {
-    "fetched_at": "2026-06-06T02:23:59Z",
-    "api1": {
-      "label": "College 1",
-      "data": {
-        "total": 1568,
-        "registered": 95,
-        "not_registered": 1473
-      },
-      "error": null
-    },
-    "api2": {
-      "label": "College 2",
-      "data": {
-        "count": {
-          "completed": 50,
-          "inprogress": 3,
-          "not_started": 42
-        }
-      },
-      "error": null
-    }
-  },
-  {
     "fetched_at": "2026-06-06T02:44:09Z",
     "registration": {
       "data": {
@@ -4182,6 +4159,27 @@
   },
   {
     "fetched_at": "2026-06-27T12:50:48Z",
+    "registration": {
+      "data": {
+        "total": 1572,
+        "registered": 1509,
+        "not_registered": 63
+      },
+      "error": null
+    },
+    "test_status": {
+      "data": {
+        "count": {
+          "completed": 1502,
+          "inprogress": 1,
+          "not_started": 6
+        }
+      },
+      "error": null
+    }
+  },
+  {
+    "fetched_at": "2026-06-27T14:25:43Z",
     "registration": {
       "data": {
         "total": 1572,
