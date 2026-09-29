@@ -1,26 +1,5 @@
 [
   {
-    "fetched_at": "2026-08-02T21:35:50Z",
-    "registration": {
-      "data": {
-        "total": 1573,
-        "registered": 1519,
-        "not_registered": 54
-      },
-      "error": null
-    },
-    "test_status": {
-      "data": {
-        "count": {
-          "completed": 1510,
-          "inprogress": 1,
-          "not_started": 8
-        }
-      },
-      "error": null
-    }
-  },
-  {
     "fetched_at": "2026-08-02T22:38:03Z",
     "registration": {
       "data": {
@@ -4160,6 +4139,17 @@
   },
   {
     "fetched_at": "2026-09-29T02:08:23Z",
+    "registration": {
+      "data": null,
+      "error": "HTTPSConnectionPool(host='api.skillagent.nxtagent.ai', port=443): Read timed out. (read timeout=30)"
+    },
+    "test_status": {
+      "data": null,
+      "error": "HTTPSConnectionPool(host='api.skillagent.nxtagent.ai', port=443): Read timed out. (read timeout=30)"
+    }
+  },
+  {
+    "fetched_at": "2026-09-29T08:27:30Z",
     "registration": {
       "data": null,
       "error": "HTTPSConnectionPool(host='api.skillagent.nxtagent.ai', port=443): Read timed out. (read timeout=30)"
