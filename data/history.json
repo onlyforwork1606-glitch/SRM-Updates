@@ -1,26 +1,5 @@
 [
   {
-    "fetched_at": "2026-09-05T20:54:47Z",
-    "registration": {
-      "data": {
-        "total": 1573,
-        "registered": 1519,
-        "not_registered": 54
-      },
-      "error": null
-    },
-    "test_status": {
-      "data": {
-        "count": {
-          "completed": 1510,
-          "inprogress": 1,
-          "not_started": 8
-        }
-      },
-      "error": null
-    }
-  },
-  {
     "fetched_at": "2026-09-05T22:36:28Z",
     "registration": {
       "data": {
@@ -4157,6 +4136,17 @@
         }
       },
       "error": null
+    }
+  },
+  {
+    "fetched_at": "2026-10-09T13:48:14Z",
+    "registration": {
+      "data": null,
+      "error": "502 Server Error: Bad Gateway for url: https://api.skillagent.nxtagent.ai/base/api/v2/registration/count?college_id=SRM-AP"
+    },
+    "test_status": {
+      "data": null,
+      "error": "502 Server Error: Bad Gateway for url: https://api.skillagent.nxtagent.ai/base/api/v2/iri/status?college_id=SRM-AP"
     }
   }
 ]
