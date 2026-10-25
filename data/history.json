@@ -1,26 +1,5 @@
 [
   {
-    "fetched_at": "2026-09-19T19:26:50Z",
-    "registration": {
-      "data": {
-        "total": 1573,
-        "registered": 1520,
-        "not_registered": 53
-      },
-      "error": null
-    },
-    "test_status": {
-      "data": {
-        "count": {
-          "completed": 1510,
-          "inprogress": 1,
-          "not_started": 9
-        }
-      },
-      "error": null
-    }
-  },
-  {
     "fetched_at": "2026-09-19T21:36:00Z",
     "registration": {
       "data": {
@@ -4130,6 +4109,27 @@
   },
   {
     "fetched_at": "2026-10-25T19:35:31Z",
+    "registration": {
+      "data": {
+        "total": 1573,
+        "registered": 1520,
+        "not_registered": 53
+      },
+      "error": null
+    },
+    "test_status": {
+      "data": {
+        "count": {
+          "completed": 1510,
+          "inprogress": 1,
+          "not_started": 9
+        }
+      },
+      "error": null
+    }
+  },
+  {
+    "fetched_at": "2026-10-25T22:02:35Z",
     "registration": {
       "data": {
         "total": 1573,
