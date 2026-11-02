@@ -1,26 +1,5 @@
 [
   {
-    "fetched_at": "2026-09-25T15:14:46Z",
-    "registration": {
-      "data": {
-        "total": 1573,
-        "registered": 1520,
-        "not_registered": 53
-      },
-      "error": null
-    },
-    "test_status": {
-      "data": {
-        "count": {
-          "completed": 1510,
-          "inprogress": 1,
-          "not_started": 9
-        }
-      },
-      "error": null
-    }
-  },
-  {
     "fetched_at": "2026-09-25T19:16:39Z",
     "registration": {
       "data": {
@@ -4147,6 +4126,17 @@
         }
       },
       "error": null
+    }
+  },
+  {
+    "fetched_at": "2026-11-02T06:52:07Z",
+    "registration": {
+      "data": null,
+      "error": "HTTPSConnectionPool(host='api.skillagent.nxtagent.ai', port=443): Max retries exceeded with url: /base/api/v2/registration/count?college_id=SRM-AP (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.skillagent.nxtagent.ai', port=443) at 0x7f893c7bd310>, 'Connection to api.skillagent.nxtagent.ai timed out. (connect timeout=30)'))"
+    },
+    "test_status": {
+      "data": null,
+      "error": "HTTPSConnectionPool(host='api.skillagent.nxtagent.ai', port=443): Max retries exceeded with url: /base/api/v2/iri/status?college_id=SRM-AP (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.skillagent.nxtagent.ai', port=443) at 0x7f893c7bf150>, 'Connection to api.skillagent.nxtagent.ai timed out. (connect timeout=30)'))"
     }
   }
 ]
